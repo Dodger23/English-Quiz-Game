@@ -1,7 +1,7 @@
 // import packages
 const express = require('express');
 const cors = require("cors");
-
+const RankHandler = require("./utils/rankHandler.js")
 
 // configure port
 const PORT = process.env.PORT || 3001;
@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json({ extended: false }));
+app.use(express.json());
 
 
 /**
@@ -29,8 +29,13 @@ app.get('/words', (res) => {
     rounded to the nearest hundredth. The rank represents the percentage of scores (check scoresList in TestData.json)
     below the given final score.
  */
-app.get('/rank', (res) => {
-  res.json({ message: 'Hello from server rank endpoint!' });
+app.post('/rank', (req, res) => {
+
+    const score = req.body.score
+
+    let rank = RankHandler.getRank(score);
+
+  res.json({ rank: rank });
 });
 
 
