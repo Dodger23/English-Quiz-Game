@@ -1,6 +1,6 @@
-const DB = require("../data/index.js");
+const DBController = require("../data/controller.js");
 
-const scoresList = DB.getScores();
+const scoresList = DBController.getScores();
 
 /**
  * @description calculate use rank given his score
