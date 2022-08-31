@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require("cors");
 const RankHandler = require("./utils/rankHandler.js")
+const WordListHandler = require('./utils/wordListHandler.js')
 
 // configure port
 const PORT = process.env.PORT || 3001;
@@ -17,9 +18,10 @@ app.use(express.json());
  * returns a list of 10 objects selected randomly from the "wordsList" (check
    wordsList in TestData.json). The array should include at least 1 adjective, 1 adverb, 1 noun, and 1 verb.
  */
-app.get('/words', (res) => {
-  res.json({ message: 'Hello from server words endpoint!' });
-  return res
+app.get('/words', (req, res) => {
+  const wordList = WordListHandler.getRandomWordList();
+  res.json(wordList)
+  res.end();
 });
 
 
