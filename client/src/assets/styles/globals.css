@@ -1,0 +1,36 @@
+
+.custome-card {
+    border-radius: 1.5rem !important;
+    box-shadow: 2px 4px 52px rgba(0, 0, 0, 0.25);
+    min-height: 350px;
+}
+
+.custome-card-header {
+    color: black;
+    text-align: center;
+    border: 0;
+    background-color: white;
+    font-weight: 800;
+    font-size: 2em;
+    padding: 1.5rem 1rem;
+    border-radius: 2rem;    
+}
+
+.custome-card-body {
+    color: #6F6F6F;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+@media only screen and (min-width: 1200px) {
+    .custome-card {
+        min-height: 400px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+    .custome-card-body {
+        padding: 0px 40px;
+    }
+}

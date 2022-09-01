@@ -1,8 +1,11 @@
+import Container from 'react-bootstrap/Container';
+import Slider from '../components/Tutorial/Slider';
+
 function Tutorial () {
     return (
-        <div>
-            Hello from Tutorial
-        </div>
+        <Container>
+            <Slider />
+        </Container>
     )
 }
 
