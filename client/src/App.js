@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './assets/logo.svg';
+import './assets/styles/App.css';
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Rank from './pages/Rank';
 import Tutorial from './pages/Tutorial';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
