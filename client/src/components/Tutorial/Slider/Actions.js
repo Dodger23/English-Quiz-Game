@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Actions({currentPage, showPrevPage, showNextPage}) {
 
     return (
-        <div className="slider-actions-container pt-5">
+        <div className="slider-actions-container pt-4">
             {currentPage === 0 
                 ? <span></span>
                 : <button onClick={showPrevPage} 
