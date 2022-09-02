@@ -1,21 +1,21 @@
 import ProgressBar from 'react-customizable-progressbar'
 import '../assets/styles/progress.css'
 
-function Progress({ wordNumber , totalCorrectAnswers} ) {
+function Progress({ currentQuestionNumber , totalCorrectAnswers} ) {
     return (
         <div className="d-flex justify-content-evenly align-items-center">
 
-            <span style={{fontSize: '0.8em'}}>Word {wordNumber} / 10</span>
+            <span style={{fontSize: '0.8em'}}>Word {currentQuestionNumber} / 10</span>
 
             <ProgressBar
                 radius={50}
-                progress={wordNumber* 10}
+                progress={currentQuestionNumber* 10}
                 strokeWidth={5}
                 strokeColor="#ffffff"
                 trackStrokeWidth={5}
             >
                 <div className="indicator">
-                    <div>{wordNumber * 10}%</div>
+                    <div>{currentQuestionNumber * 10}%</div>
                 </div>
             </ProgressBar>
 

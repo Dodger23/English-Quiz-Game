@@ -11,6 +11,8 @@ import Quiz from './pages/Quiz';
 import Rank from './pages/Rank';
 import Tutorial from './pages/Tutorial';
 import { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [name, setName] = useState('');
@@ -27,6 +29,7 @@ function App() {
           <Route path='/quiz' element={<Quiz />} />
           <Route path='/rank' element={<Rank name={name}/>} />
         </Routes>
+        <ToastContainer pauseOnHover={false} hideProgressBar={true} autoClose={false}/>
       </Router>
     </div>
   );

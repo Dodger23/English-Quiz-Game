@@ -31,7 +31,7 @@ function CustomeButton({title, disabled, onClick}) {
         `}
       </style>
 
-      <Button variant="primary" disabled={disabled} size='xl'>
+      <Button variant="primary" disabled={disabled} onClick={onClick} size='xl'>
           {title}
       </Button>
     </>
