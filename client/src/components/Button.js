@@ -6,7 +6,7 @@ function CustomeButton({title, disabled, onClick}) {
       <style type="text/css">
         {`
             .btn-primary {
-                background-color: #fdb438;
+                background-color: #FFCD37; ;
                 color: black;
                 border: 2px solid black;
                 border-radius: 30px;
@@ -17,8 +17,9 @@ function CustomeButton({title, disabled, onClick}) {
             }
 
             .btn-primary:hover, .btn-primary:focus {
-                background-color: #ffa02d;
-                color: black
+                background-color: #fdb438;
+                color: black;
+                border: 2px solid black;
             }
 
             .btn-primary:disabled {
