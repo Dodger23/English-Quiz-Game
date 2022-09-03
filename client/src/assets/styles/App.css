@@ -1,0 +1,8 @@
+.App-layout {
+  background: rgb(88,111,236);
+  background: linear-gradient(42deg, rgba(88,111,236,1) 0%, rgba(26,170,251,1) 100%); 
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+}

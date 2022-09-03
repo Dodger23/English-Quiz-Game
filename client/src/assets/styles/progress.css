@@ -1,0 +1,35 @@
+
+
+.indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    user-select: none;
+}
+
+.correct-answers-container {
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%
+}
+
+@media only screen and (min-width: 900px) {
+    .correct-answers-container {
+        width: 15%
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .correct-answers-container {
+        width: 10%
+    }
+}

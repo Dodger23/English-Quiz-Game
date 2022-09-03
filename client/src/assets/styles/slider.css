@@ -1,0 +1,50 @@
+.slider-ticks-container {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+
+.tick-button {
+    width: 54px;
+    height: 20px;
+    display: flex;
+    background-color: transparent;
+    border: 0.15rem solid white;
+    border-radius: 20px;
+}
+
+.tick-button-active {
+    background-color: white;
+}
+
+.slider-actions-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-action {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+.slider-action:hover {
+    border: 1px solid white;
+}
+
+.slider-action-finish {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    background-color: #FAC05E;
+    border: 1px solid black;
+}
+
+.slider-action-finish:hover {
+    background-color: #f0ab4a;
+    border: 1px solid black;
+    color: black;
+}

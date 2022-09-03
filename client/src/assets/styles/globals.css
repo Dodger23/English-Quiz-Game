@@ -1,0 +1,71 @@
+:root {
+    --toastify-toast-width: 400px !important;
+    --toastify-font-family: Inter !important;
+    --toastify-text-color-light: black !important;
+}
+
+.Toastify__toast  {
+    padding: 20px !important;
+    border-radius: 10px 10px !important;
+    font-weight: bold !important;
+}
+
+.custome-card {
+    border-radius: 1.5rem !important;
+    box-shadow: 2px 4px 52px rgba(0, 0, 0, 0.25);
+    min-height: 50%;
+    padding: 20px;
+    min-width: 75%;
+}
+
+.custome-card-header {
+    color: black;
+    text-align: center;
+    border: 0;
+    background-color: white;
+    font-weight: 800;
+    font-size: 2em;
+    padding: 1.5rem 1rem;
+    border-radius: 2rem;    
+}
+
+.custome-card-body {
+    color: #6F6F6F;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+@media only screen and (min-width: 1200px) {
+    .custome-card {
+        min-height: 50%;
+        width: 60%;
+        margin: 0 auto;
+        padding: 40px 30px;
+    }
+
+    .custome-card-body {
+        padding: 0px 40px;
+    }
+}
+
+.name-input {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #acacac;
+    padding: 10px;
+    font-family: 'Inter';
+    font-weight: bold;
+    text-align: center;
+}
+
+.name-input:focus {
+    outline: none !important;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+@media only screen and (min-width: 900px) {
+    .name-input {
+        width: 50%;
+    }
+}
