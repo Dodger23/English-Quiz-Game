@@ -13,22 +13,13 @@ let counter = 0;
  */
 module.exports.getRandomWordList = function getRandomWordList(len = 10) {
   while (result.length < len) {
-    let mod = counter % 4;
-    switch (mod) {
-      case 0:
-        getNewAdverb();
-        break;
-      case 1:
-        getNewVerb();
-        break;
-      case 2:
-        getNewNoun();
-        break;
-      case 3:
-        getNewAdjective();
-        break;
-    }
-    counter++;
+      getNewAdverb();
+      if( result.length >= len) return 
+      getNewVerb();
+      if( result.length >= len) return 
+      getNewNoun();
+      if( result.length >= len) return 
+      getNewAdjective();
   }
   result.sort((a,b) => {
       let random = ( '0.' + ( Math.round(new Date().getTime() *  Math.random())));
@@ -40,7 +31,7 @@ module.exports.getRandomWordList = function getRandomWordList(len = 10) {
 function getNewVerb() {
   if (verbList.length) {
     result.push(verbList[0]);
-    verbList.shidt();
+    verbList.shift();
   }
   return;
 }
