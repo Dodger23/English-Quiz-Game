@@ -1,6 +1,8 @@
 import React from 'react';
-import ReactLoading from 'react-loading';
+
 import Container from "react-bootstrap/esm/Container";
+
+import ReactLoading from 'react-loading';
 
 function Loading() {
     return (

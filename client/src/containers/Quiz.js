@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/esm/Container"
 import Row from 'react-bootstrap/Row';
-import ProgressBar from "../components/Progress.js"
+
+import ProgressBar from "../components/Progress"
 import Button from '../components/Button'
 import AnswerOption from "../components/AnswerOption.js";
 

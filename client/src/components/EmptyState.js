@@ -1,5 +1,7 @@
 import {useNavigate} from "react-router-dom";
+
 import Container from "react-bootstrap/esm/Container";
+
 import Button from './Button'
 
 function EmptyState({message}) {

@@ -1,4 +1,5 @@
 import ProgressBar from 'react-customizable-progressbar'
+
 import '../assets/styles/progress.css'
 
 function Progress({ currentQuestionNumber , totalCorrectAnswers} ) {

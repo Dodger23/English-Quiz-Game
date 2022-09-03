@@ -32,6 +32,7 @@ function RankContainer () {
             .then(data => data.rank)
             .then(rank => setUserRank(rank))
             .then(() => setIsStatful(true))
+            .catch(err => console.log(err.message))
 
         } else {
             setIsStatful(false)

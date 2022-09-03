@@ -12,9 +12,6 @@
     border: 0.15rem solid white;
     border-radius: 20px;
 }
-.tick-button:hover {
-    background-color: white;
-}
 
 .tick-button-active {
     background-color: white;

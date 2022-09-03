@@ -42,6 +42,8 @@ function Quiz () {
             })
         })
         .then(() => setIsLoading(false))
+        .catch(err => console.log(err.message))
+
     }, []);
     
     
@@ -55,19 +57,35 @@ function Quiz () {
             answer: false
         })
     }
+    
+    const increaseTotalCorrectAnswers = () => {
+        setTotalCorrectAnswers(totalCorrectAnswers + 1);
+    }
 
-    const handleAnswer = (syntactic) => {
-        if(syntactic === currentQuestion.pos) {
-            setTotalCorrectAnswers(totalCorrectAnswers + 1);
-            toast("That is correct 😃🎉")
-        } else {
-            toast("Oops! Not right 😓")
-        }
+    const showCorrectAnswerNotify = () => {
+        toast("That is correct 😃🎉");
+    }
 
+    const showWrongAnswerNotify = () => {
+        toast("Oops! Not right 😓");
+    }
+
+    const updateAnswerValue = (syntactic) => {
         setCurrentQuestion({
             ...currentQuestion,
             answer: syntactic
         });
+    }
+
+    const handleAnswer = (syntactic) => {
+        if(syntactic === currentQuestion.pos) {
+            increaseTotalCorrectAnswers();
+            showCorrectAnswerNotify();
+        } else {
+            showWrongAnswerNotify();
+        }
+
+        updateAnswerValue(syntactic)
     }
 
     const handleOnNextButtonClick = () => {
@@ -78,16 +96,17 @@ function Quiz () {
             handleNextQuestion()
         }         
     }
+    
 
     if(isLoading) return <Loading />
 
     return (
         <QuizContainer 
-            currentQuestion={currentQuestion} 
-            totalCorrectAnswers={totalCorrectAnswers} 
-            handleAnswer={handleAnswer} 
-            handleOnNextButtonClick={handleOnNextButtonClick}
-            state={state}/>
+        currentQuestion={currentQuestion} 
+        totalCorrectAnswers={totalCorrectAnswers} 
+        handleAnswer={handleAnswer} 
+        handleOnNextButtonClick={handleOnNextButtonClick}
+        state={state}/>
     )
 }
 

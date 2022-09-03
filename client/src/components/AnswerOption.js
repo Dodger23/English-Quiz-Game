@@ -1,4 +1,5 @@
 import Col from 'react-bootstrap/Col';
+
 import '../assets/styles/quiz.css'
 
 function AnswerOption({title, answer, correctAnswer, handleAnswer}) {
