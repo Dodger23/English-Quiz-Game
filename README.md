@@ -72,6 +72,7 @@ the activity).
  5. Inside `English-Quiz-Game` open another terminal and run these commands
 	- `cd client`
 	- `npm start`
+6. Proejct will be running on `localhost`
 
 ## How to Run in production  mode?
 
@@ -83,7 +84,8 @@ the activity).
  4. Keep that terminal alive for the server
  5. Inside `English-Quiz-Game` open another terminal and run these commands
 	- `cd client`
-	- `npm build`
+	- `npm run build`
  6. Wait for the script to finish
  7. Run `npx serve -s build`
  8. input `y` in the terminal when asked for premission to install `serve` package
+ 9. Proejct will be running on `localhost`
