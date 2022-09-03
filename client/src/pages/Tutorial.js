@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/Container';
-import Slider from '../components/Tutorial/Slider';
+import Slider from '../components/Slider';
 
 function Tutorial () {
     return (

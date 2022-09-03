@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import {useNavigate} from "react-router-dom";
-import Container from "react-bootstrap/esm/Container"
-import Row from 'react-bootstrap/Row';
-import ProgressBar from "../components/Progress.js"
-import Button from '../components/Button'
-import AnswerOption from "../components/AnswerOption.js";
 import { toast } from 'react-toastify';
 import apiClient from '../services'
 import endPoints from '../services/endpoints'
 
 import '../assets/styles/quiz.css'
+import Loading from "../components/Loding.js";
+import QuizContainer from "../containers/Quiz.js";
 
 function Quiz () {
     const [wordsList, setWordsList] = useState([]);
@@ -72,48 +69,23 @@ function Quiz () {
         });
     }
 
+    const handleOnNextButtonClick = () => {
+        if(currentQuestion.number === 9) {
+            toast.dismiss(); 
+             navigate("/rank", {state: {score: totalCorrectAnswers}})
+        } else {
+            handleNextQuestion()
+        }         
+    }
+
+    if(isLoading) return <Loading />
+
     return (
-        <Container>
-            {
-                isLoading 
-                ? <div style={{height: '83vh'}} className=" d-flex justify-content-center align-items-center">Loading ...</div>
-
-                : <div  style={{height: '83vh'}} className='d-flex flex-column justify-content-between'>
-
-                    <ProgressBar currentQuestionNumber={currentQuestion.number +1} totalCorrectAnswers={totalCorrectAnswers}/>
-                    
-                    <div className="question-word-container">
-                        <span>
-                            {currentQuestion.word}
-                        </span>
-                    </div>
-                    
-                    <Row >
-                        {
-                            ['adverb', 'verb', 'noun', 'adjective'].map((syntactic, index) => 
-                                <AnswerOption 
-                                    key={index}
-                                    title={syntactic} 
-                                    answer={currentQuestion.answer} 
-                                    correctAnswer={currentQuestion.pos}
-                                    handleAnswer={handleAnswer}>                            
-                                </AnswerOption>
-                            )
-                        }
-                        
-                    </Row>
-
-                    <div className="d-flex justify-content-center">
-                        <Button 
-                            title={currentQuestion.number === 9? 'Show my Rank' : 'Next Question'} 
-                            onClick={currentQuestion.number === 9 ? () => navigate("/rank") :  handleNextQuestion}
-                            disabled={currentQuestion.answer ? false : true}>
-                        </Button>
-                    </div>
-                </div>
-            }
-            
-        </Container>
+        <QuizContainer 
+            currentQuestion={currentQuestion} 
+            totalCorrectAnswers={totalCorrectAnswers} 
+            handleAnswer={handleAnswer} 
+            handleOnNextButtonClick={handleOnNextButtonClick}/>
     )
 }
 

@@ -31,9 +31,11 @@ function CustomeButton({title, disabled, onClick}) {
         `}
       </style>
 
-      <Button variant="primary" disabled={disabled} onClick={onClick} size='xl'>
-          {title}
-      </Button>
+      <div className="d-flex justify-content-center">
+        <Button variant="primary" disabled={disabled} onClick={onClick} size='xl'>
+            {title}
+        </Button>
+      </div>
     </>
   );
 }
