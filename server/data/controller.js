@@ -49,9 +49,8 @@ function categorizeWords(wordList) {
 // prepare words for fetching
 let wordList = data.wordList;
 
-wordList = shuffleWords(wordList);
+shuffleWords(wordList);
 categorizeWords(wordList);
-console.log(wordsCategories)
 
 
 
