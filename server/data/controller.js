@@ -5,15 +5,20 @@ let res = fs.readFileSync("data/TestData.json");
 data = JSON.parse(res);
 
 
-// fetching scores
+// ******* fetching scores *******************
 module.exports.getScores = function getScores() {
     return data.scoresList;
 };
 
+
 // ==========================================================
 
-// fetching wordsList
 
+
+// ******* fetching wordsList ******************
+
+
+// words caregories
 const wordsCategories = {
     "noun": [],
     "adjective": [],
@@ -24,22 +29,29 @@ const wordsCategories = {
 
 // shuffle words in wordList to prevent repeataion
 function shuffleWords(wordList) {
-    return wordList.sort((a, b) => 0.5 - Math.random())
+    
+    wordList.sort((a, b) => {
+        let random = ( '0.' + ( Math.round(new Date().getTime() *  Math.random())));
+        return 0.5 - parseFloat(random)
+    })
+    
+    return wordList
 }
 
 // categorize words to ease the process of selecting from them
 function categorizeWords(wordList) {
-    wordList.forEach(word => {
-        let category = word.pos;
-        wordsCategories[category].push(word);
-    })
+    for(let i =0 ; i < wordList.length ; i++) {
+        let category = wordList[i].pos;
+        wordsCategories[category].push(wordList[i]);
+    }
 }
 
 // prepare words for fetching
 let wordList = data.wordList;
 
-shuffleWords(wordList);
+wordList = shuffleWords(wordList);
 categorizeWords(wordList);
+console.log(wordsCategories)
 
 
 

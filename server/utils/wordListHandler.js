@@ -30,41 +30,41 @@ module.exports.getRandomWordList = function getRandomWordList(len = 10) {
     }
     counter++;
   }
+  result.sort((a,b) => {
+      let random = ( '0.' + ( Math.round(new Date().getTime() *  Math.random())));
+      return 0.5 - parseFloat(random)
+  })
   return result;
 };
 
 function getNewVerb() {
   if (verbList.length) {
-    let index = Math.floor(Math.random() * verbList.length);
-    result.push(verbList[index]);
-    verbList.splice(index, 1);
+    result.push(verbList[0]);
+    verbList.shidt();
   }
   return;
 }
 
 function getNewNoun() {
   if (nounList.length) {
-    let index = Math.floor(Math.random() * nounList.length);
-    result.push(nounList[index]);
-    nounList.splice(index, 1);
+    result.push(nounList[0]);
+    nounList.shift();
   }
   return;
 }
 
 function getNewAdjective() {
   if (adjectiveList.length) {
-    let index = Math.floor(Math.random() * adjectiveList.length);
-    result.push(adjectiveList[index]);
-    adjectiveList.splice(index, 1);
+    result.push(adjectiveList[0]);
+    adjectiveList.shift();
   }
   return;
 }
 
 function getNewAdverb() {
   if (adverbList.length) {
-    let index = Math.floor(Math.random() * adverbList.length);
-    result.push(adverbList[index]);
-    adverbList.splice(index, 1);
+    result.push(adverbList[0]);
+    adverbList.shift();
   }
   return;
 }
