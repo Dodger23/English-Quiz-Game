@@ -4,11 +4,11 @@ import {
   Route,
 } from "react-router-dom";
 
-import logo from './assets/logo.svg';
 import './assets/styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+import Navbar from "./components/Navbar";
 import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Rank from './pages/Rank';
@@ -21,18 +21,20 @@ function App() {
   return (
     <div className="App-layout">
       <Router>
-        <nav>
-          <img src={logo} alt="Nagwa company logo" />
-        </nav>
+        
+        <Navbar />
+
         <Routes>
           <Route path='/' element={<Tutorial />} />
           <Route path='/home' element={<Home />} />
           <Route path='/quiz' element={<Quiz />} />
           <Route path='/rank' element={<Rank />} />
         </Routes>
+
         <ToastContainer pauseOnHover={false} hideProgressBar={true} autoClose={false}/>
-      </Router>
       
+      </Router>
+
     </div>
   );
 }
