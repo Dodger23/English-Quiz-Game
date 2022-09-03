@@ -1,6 +1,10 @@
 # JavaScript Developer Task @ Nagwa
 This project is a task for a JavaScript Developer position at Nagwa company
 
+## [Figma Design ](https://www.figma.com/file/dRxzCFAHoPJojNM1tLxJjg/Nagwa?node-id=0%3A1)
+The UI design for the project
+
+
 ##  Task Description: 
 
  In English language, words can be categorized according to their syntactic functions, which is known as "Part of Speech".
