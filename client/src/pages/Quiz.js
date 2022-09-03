@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useLocation} from "react-router-dom";
 import { toast } from 'react-toastify';
 import apiClient from '../services'
 import endPoints from '../services/endpoints'
@@ -9,6 +9,7 @@ import Loading from "../components/Loding.js";
 import QuizContainer from "../containers/Quiz.js";
 
 function Quiz () {
+    const {state} = useLocation()
     const [wordsList, setWordsList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
@@ -72,7 +73,7 @@ function Quiz () {
     const handleOnNextButtonClick = () => {
         if(currentQuestion.number === 9) {
             toast.dismiss(); 
-             navigate("/rank", {state: {score: totalCorrectAnswers}})
+             navigate("/rank", {state: {...state, score: totalCorrectAnswers}})
         } else {
             handleNextQuestion()
         }         
@@ -85,7 +86,8 @@ function Quiz () {
             currentQuestion={currentQuestion} 
             totalCorrectAnswers={totalCorrectAnswers} 
             handleAnswer={handleAnswer} 
-            handleOnNextButtonClick={handleOnNextButtonClick}/>
+            handleOnNextButtonClick={handleOnNextButtonClick}
+            state={state}/>
     )
 }
 

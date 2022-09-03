@@ -1,22 +1,28 @@
+import { useState } from 'react';
+
+import { useNavigate } from 'react-router-dom';
+
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Button from '../components/Button'
+
 import '../assets/styles/slider.css'
-import { Link } from 'react-router-dom';
 
-function Home ({name, setName}) {
+function Home () {
+
+    const navigate = useNavigate();
     
-   
+    const [name, setName] = useState('');
 
-    const handleChange = (event) => {
+    const handleTextChange = (event) => {
         const value = event.target.value;
-        setName(value);
-    };
+        setName(value)
+    }
 
     return (
         <Container>
 
-            <div style={{height: '83vh'}} className='d-flex flex-column justify-content-center '>
+            <div style={{height: '83vh'}} className='d-flex flex-column justify-content-evenly '>
                 <Card 
                     bg='white'
                     text='black'
@@ -32,16 +38,16 @@ function Home ({name, setName}) {
                                 className='name-input' 
                                 placeholder='Enter Your Name Here'
                                 value={name}
-                                onChange={handleChange}/>
+                                onChange={handleTextChange}/>
                         </div>
                     </Card.Body>
                 </Card>
 
-                <div className='d-flex justify-content-center mt-5'>
-                    <Link to={name === '' ? '' : '/quiz'}  style={{textDecoration: 'none', cursor: 'default'}} >
-                        <Button title={'Start Now'} disabled={name === '' ? true : false}/>
-                    </Link>
-                </div>
+                <Button 
+                title={'Start Now'} 
+                disabled={name === '' ? true : false} 
+                onClick={() => navigate('/quiz', {state: {name: name}})}/>
+
             </div>
 
         </Container>

@@ -12,7 +12,7 @@ import RankContianer from "../containers/Rank";
 
 
 
-function RankContainer ({name}) {
+function RankContainer () {
 
     const {state} = useLocation();
     const [isStateful, setIsStatful] = useState(true);
@@ -45,7 +45,7 @@ function RankContainer ({name}) {
     
     return (
         
-        <RankContianer name={name} score={state.score} userRank={userRank} />
+        <RankContianer name={state.name} score={state.score} userRank={userRank} />
 
     )
 }
