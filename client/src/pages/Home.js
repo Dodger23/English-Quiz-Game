@@ -38,8 +38,8 @@ function Home ({name, setName}) {
                 </Card>
 
                 <div className='d-flex justify-content-center mt-5'>
-                    <Link to={name === '' ? '' : '/quiz'}  style={{textDecoration: 'none', cursor: 'default'}}>
-                        <Button title={'Start Now'} disabled={name === '' ? true : false} onClick={setName}/>
+                    <Link to={name === '' ? '' : '/quiz'}  style={{textDecoration: 'none', cursor: 'default'}} >
+                        <Button title={'Start Now'} disabled={name === '' ? true : false}/>
                     </Link>
                 </div>
             </div>

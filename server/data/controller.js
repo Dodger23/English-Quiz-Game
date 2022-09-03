@@ -7,7 +7,7 @@ data = JSON.parse(res);
 
 // fetching scores
 module.exports.getScores = function getScores() {
-    return data.scoreList;
+    return data.scoresList;
 };
 
 // ==========================================================

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import '../../../assets/styles/slider.css'
-import '../../../assets/styles/globals.css'
+import '../../assets/styles/slider.css'
+import '../../assets/styles/globals.css'
 import Actions from './Actions';
 import Ticks from './Ticks';
 
